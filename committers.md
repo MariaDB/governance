@@ -10,11 +10,11 @@ Commit rights mean a technical ability to push to MariaDB repositories. They do 
 
 ### **List of committers**
 
-*github team membership cannot be made public. other projects solve it by keeping a list in a file and synchronizing with a team using github API from github action. we can have the list in this file and have github action push it to team membership*
+See [here](lists/committers.md)
 
 ### **List of reviewers**
 
-*same as above, we’ll have a new team Reviewers, auto-updated from this file. And our github can have a ruleset that every PR must be approved by a reviewer*
+See [here](lists/reviewers.md)
 
 ### **Becoming a committer or a reviewer**
 
