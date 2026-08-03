@@ -1,0 +1,23 @@
+name: Check lists formatting
+
+on:
+  pull_request:
+    paths:
+      - 'lists/**'
+
+jobs:
+  verify-list-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Verify bullet counts match the required pattern
+        run: |
+          # all lines that start with this:
+          BULLET_RE='^[[:space:]]*\*[[:space:]]+'
+
+          # must match this:
+          LINK_RE=$BULLET_RE'\[[^]]+\]\(https://github\.com/[a-zA-Z0-9_-]+\)$'
+
+          ! grep -E "$BULLET_RE" lists/* | grep -vE "$LINK_RE"
