@@ -2,7 +2,7 @@
 
 From time to time some features in MariaDB will be marked as deprecated. This is done to warn MariaDB users that the feature is likely to disappear in some upcoming major version and give them time to adapt to the change.
 
-The policy is that "It is unacceptable for a user to upgrade from a supported version `A` where a feature works normally to a version `B` where a feature doesn't exist without an advanced warning."
+The policy is that "It is unacceptable for a user to upgrade from a supported version `A` where a feature works normally to a version `B` where a feature doesn't exist without an advance warning."
 
 Thus, when a feature is removed for some reason, the sequence of steps is as follows:
 
