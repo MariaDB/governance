@@ -8,5 +8,7 @@
 | Maintainer inactivity before removal | 20 working days |
 | Committer inactivity before removal | 1 calendar year |
 | Orphaned subsystem review | 10 working days. Then quarterly to see if a change in the status is needed. |
+| Time before merge for a pull request that needs a simple majority | At least 5 working days
+| Time before merge for a pull request that needs a supermajority | At least 10 working days
 
 This table summarizes the timing, response expectations, and deadlines defined in the Governance model to ensure project responsiveness and avoid deadlocks. Note that working days exclude vacations and holidays.

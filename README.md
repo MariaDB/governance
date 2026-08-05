@@ -16,4 +16,4 @@ The goal of this repository is to provide a clear, transparent home for the rule
 - [Response Times](response-times.md)
 - [Security policy](security-policy.md)
 
-Changing to this repository follow the process described in [Governance. Decision making](governance.md#3-decision-making).
+Changing to this repository follow the process described in [Governance. Decision making](governance.md#3-decision-making) and [Maintainers. Voting and Recording decisions](maintainers.md#voting-and-recording-decisions)
