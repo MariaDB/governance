@@ -57,7 +57,12 @@ Former maintainers, removed for inactivity, but recognized for past stewardship.
 
 Additions, removals, emeritus transitions, and subsystem status changes are recorded here once confirmed under [Governance. Becoming a maintainer](governance.md#21-becoming-a-maintainer), [Governance. Ceasing to be a maintainer](governance.md#22-ceasing-to-be-a-maintainer), or the [Deprecation policy](deprecation-policy.md).
 
+## Maintainer Council
 
+Maintainer Council is a body consisting of all maintainers and stewards. It makes decisions that affect the whole project. For example, changing documents in the [governance](https://github.com/MariaDB/governance) repository affect the whole project and require Maintainer Council decision.
 
+### Voting and Recording decisions
 
+As all the documents and membership lists are stored in github, all changes to them are done via pull requests and both voting and approvals happen by approving the corresponding pull requests.
 
+Technical changes, like fixing a typo, and changes to the lists of [committers](lists/committers.md) or [reviewers](lists/reviewers.md) require one approval. Changes to all other documents except [Governance](governance.md) require a simple majority approval, and changes to the [Governance](governance.md) must be approved by a 2/3rd supermajority. Also see [Response Times](response-times.md).
