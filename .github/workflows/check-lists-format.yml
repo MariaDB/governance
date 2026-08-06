@@ -1,0 +1,83 @@
+name: Check lists formatting
+
+on:
+  pull_request:
+    paths:
+      - 'lists/**'
+
+jobs:
+  verify-list-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed so we can see the full diff
+
+      - name: Identify changed files under lists/
+        id: changed
+        run: |
+          # Files that were added or modified in this PR under lists/
+          mapfile -t CHANGED < <(
+            git diff --name-only --diff-filter=AM ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} -- 'lists/'
+          )
+          if [ ${#CHANGED[@]} -eq 0 ]; then
+            echo "No files under lists/ were added or modified."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Changed files:"
+          printf '  %s\n' "${CHANGED[@]}"
+          # Export the list for the next step (newline-separated)
+          {
+            echo "files<<EOF"
+            printf '%s\n' "${CHANGED[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Verify bullet counts match the required pattern
+        if: steps.changed.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+
+          # Pattern for any bullet line (optional leading whitespace + *)
+          BULLET_RE='^[[:space:]]*\*'
+
+          # A more detailed format for each .md line in the list:
+          #   optional whitespace, *, whitespace, [label](https://github.com/username)
+          LINK_RE='^[[:space:]]*\*[[:space:]]+\[[^]]+\]\(https://github\.com/[a-zA-Z0-9_-]+\)$'
+          FAIL=0
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if [ ! -f "$file" ]; then
+              echo "::warning::File $file disappeared - skipping"
+              continue
+            fi
+
+            bullet_count=$(grep -cE "$BULLET_RE" "$file" || true)
+            link_count=$(grep -cE "$LINK_RE"  "$file" || true)
+
+            echo "File: $file"
+            echo "  lines matching ^[[:space:]]*\*          : $bullet_count"
+            echo "  lines matching the GitHub-link pattern  : $link_count"
+
+            if [ "$bullet_count" -ne "$link_count" ]; then
+              echo "::error file=$file::Bullet-line count ($bullet_count) does not equal properly-formatted GitHub-link count ($link_count)"
+              FAIL=1
+            else
+              echo "  ? counts match"
+            fi
+            echo
+          done <<< "${{ steps.changed.outputs.files }}"
+
+          if [ "$FAIL" -ne 0 ]; then
+            echo
+            echo "One or more files under lists/ failed the check."
+            echo "Every line that starts with optional whitespace followed by '*' must also match:" 
+            echo "  $LINK_RE"
+            exit 1
+          fi
+
+          echo "All checks for files under lists/ passed."
+
