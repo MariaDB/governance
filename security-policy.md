@@ -8,7 +8,7 @@ The MariaDB Server developers classify all security bugs according to their thre
   unauthenticated user to crash the server or get access to the data.  
 * **Medium:** everything else.
 
-We strive to fix any Critical security bug immediately, usually within hours, and release fixed MariaDB binaries as soon as possible, usually the next day.
+We strive to fix any Critical security bug immediately and release fixed MariaDB binaries for all supported MariaDB versions as soon as possible, usually within two weeks.
 
 We will fix Medium security bugs as soon as possible, but we will not change our planned release schedule to get the fix out earlier.
 
