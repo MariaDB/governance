@@ -1,0 +1,32 @@
+name: update_lists_on_change
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lists/**'
+  workflow_dispatch:
+
+concurrency:
+  group: update-lists
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Sync GitHub teams from lists/
+        env:
+          # Needs permission to manage org team membership (Members: read and).
+          # GITHUB_TOKEN cannot usually change org teams; store a PAT or GitHub App
+          # token as TEAM_SYNC_TOKEN.
+          GH_TOKEN: ${{ secrets.TEAM_SYNC_TOKEN || github.token }}
+        run: bash .github/workflows/update_lists.sh 
+
