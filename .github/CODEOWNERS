@@ -1,0 +1,4 @@
+# this is used to tell github to specify required PR reviewers
+
+*.md @MariaDB/maintainers
+/.github/ @gkodinov @vuvova
