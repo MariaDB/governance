@@ -4,7 +4,7 @@ MariaDB Server welcomes AI-assisted contributions. Code written with the help of
 
 Four things are asked of anyone contributing AI-assisted work.
 
-**Disclose it.** If an AI tool substantially helped write a contribution, say so with a commit trailer naming the tool and version. We follow [Linux kernel conventions](https://docs.kernel.org/process/coding-assistants.html):
+**Disclose it.** If an AI tool substantially helped write a contribution, say so with a commit trailer naming the tool and version. We follow [Linux kernel conventions](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/coding-assistants.rst?id=3d7c44f73765d98665fb97a4fb89c002c88ba1b9#n41):
 
     Assisted-by: Claude:claude-4.6-sonnet
 
