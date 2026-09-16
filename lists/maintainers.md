@@ -4,6 +4,8 @@
   — MariaDB plc, MariaDB Foundation
 * [Sergei Golubchik](https://github.com/vuvova)
   — MariaDB plc
+* [Kristian Nielsen](https://github.com/knielsen)
+  — Kristian Nielsen Consulting, MariaDB Foundation
 
 #### **Server core (default)**
 
