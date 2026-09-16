@@ -4,6 +4,8 @@
   — MariaDB plc, MariaDB Foundation
 * [Sergei Golubchik](https://github.com/vuvova)
   — MariaDB plc
+* [Alex Hanshaw](https://github.com/mariadb-AlexHanshaw)
+  — MariaDB plc
 
 #### **Server core (default)**
 
