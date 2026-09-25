@@ -20,4 +20,4 @@ jobs:
           # must match this:
           LINK_RE=$BULLET_RE'\[[^]]+\]\(https://github\.com/[a-zA-Z0-9_-]+\)$'
 
-          ! grep -E "$BULLET_RE" lists/* | grep -vE "$LINK_RE"
+          ! grep -hE "$BULLET_RE" lists/* | grep -vE "$LINK_RE"
