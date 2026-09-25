@@ -3,6 +3,7 @@
 * [Brandon Nesterenko](https://github.com/bnestere)
 * [Daniel Black](https://github.com/grooverdan)
 * [Georg Richter](https://github.com/9EOR9)
+* [Georgi Kodinov](https://github.com/gkodinov)
 * [Kristian Nielsen](https://github.com/knielsen)
 * [Michael Widenius](https://github.com/montywi)
 * [Oleksandr "Sanja" Byelkin](https://github.com/sanja-byelkin)
