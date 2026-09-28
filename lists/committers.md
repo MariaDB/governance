@@ -28,6 +28,7 @@
 * [Otto Kekäläinen](https://github.com/ottok)
 * [ParadoxV5](https://github.com/ParadoxV5)
 * [Pekka Lampio](https://github.com/plampio)
+* [Pranav Tiwari](https://github.com//mariadb-PranavTiwari)
 * [Raghunandan Bhat](https://github.com/raghunandanbhat)
 * [Ramesh Sivaraman](https://github.com/mariadb-RameshSivaraman)
 * [Razvan Liviu Varzaru](https://github.com/RazvanLiviuVarzaru)
@@ -57,5 +58,4 @@
 * [mariadb-andrzejjarzabek](https://github.com/mariadb-andrzejjarzabek)
 * [mariadb-poojalamba](https://github.com/mariadb-poojalamba)
 * [mleich1](https://github.com/mleich1)
-* [pranavktiwari](https://github.com/pranavktiwari)
 * [seppo](https://github.com/sjaakola)
