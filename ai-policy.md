@@ -6,7 +6,11 @@ Four things are asked of anyone contributing AI-assisted work.
 
 **Disclose it.** If an AI tool substantially helped write a contribution, say so with a commit trailer naming the tool and version. We follow [Linux kernel conventions](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/coding-assistants.rst?id=3d7c44f73765d98665fb97a4fb89c002c88ba1b9#n41):
 
-    Assisted-by: Claude:claude-4.6-sonnet
+    Assisted-by: AGENT_NAME:MODEL_ID [TOOL1 [TOOL2 [...]]]
+
+for example
+
+    Assisted-by: Claude:claude-opus-5.5
 
 Trivial assistance — autocompleting a variable name, suggesting a docstring, minor completions — does not need disclosure. The trailer follows the same 50/72 commit-message convention as `Reviewed-by:` — see the [Coding Style](https://mariadb.org/about/coding-style/) document.
 
